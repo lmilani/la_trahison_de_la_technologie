@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
     <style>
-      .landscape {
-        background: lavender;
+      .trahison {
+        background: khaki;
         margin: 0 auto;
         width: 80%;
-        height: 80%;
+        height: 50%;
+        color: brown;
         font-family: "Courier New", Courier, monospace;
         font-size: 8pt;
+        font-weight: bold;
+      }
+      body {
+        background: whitesmoke;
       }
       h1 {
         font-family: Arial, Helvetica, sans-serif;
@@ -24,10 +29,9 @@
         var nestpas = new XMLHttpRequest();
         nestpas.onreadystatechange = function () {
           if (nestpas.readyState == 4 && nestpas.status == 200) {
-            document.getElementById("landscape").innerHTML =
+            document.getElementById("trahison").innerText =
               nestpas.responseText;
           }
-          console.log(nestpas.responseText);
         };
         nestpas.open("GET", "");
         nestpas.send(null);
@@ -35,7 +39,7 @@
     </script>
   </head>
   <body>
-    <div class="landscape" id="landscape"></div>
+    <div class="trahison" id="trahison"></div>
     <h1>
       Ceci n'est pas un site internet.
     </h1>
