@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      .landscape {
+        background: lavender;
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 8pt;
+      }
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function ceciNestPasUnSiteInternet() {
+        var nestpas = new XMLHttpRequest();
+        nestpas.onreadystatechange = function () {
+          if (nestpas.readyState == 4 && nestpas.status == 200) {
+            document.getElementById("landscape").innerHTML =
+              nestpas.responseText;
+          }
+          console.log(nestpas.responseText);
+        };
+        nestpas.open("GET", "");
+        nestpas.send(null);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="landscape" id="landscape"></div>
+    <h1>
+      Ceci n'est pas un site internet.
+    </h1>
+    <script>
+      ceciNestPasUnSiteInternet();
+    </script>
+  </body>
+</html>
